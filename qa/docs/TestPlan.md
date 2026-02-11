@@ -1,4 +1,4 @@
-# Test plan - Travel BiH Demo Application
+`# Test plan - Travel BiH Demo Application
 
 ## 1. Introduction
 This document describes the testing approach for the Travel BiH demo web application, which allows users to register, log in, and view tourist attractions.
@@ -41,7 +41,7 @@ Automation testing will be performed for critical application flows using Pytest
 - API Tools: Postman
 - Automation Tools: Pytest, Playwright
 
-## Test Deliverables
+## 5. Test Deliverables
 The following testing artifacts will be delivered:
 - Test Plan document
 - Manual Test Cases document
@@ -55,9 +55,13 @@ The following testing artifacts will be delivered:
 ### Entry Criteria
 - Backend and frontend applications are running
 - Test environment is available
-- Required test data is prepared
+- Database has seeded attractions (test data prepared)
+- Test user can be created (registration works) or test credentials are provided
 
 ### Exit Criteria
-- All planned test cases are executed
-- Critical and high severity defects are reported
-- Test results are documented
+- All planned manual test cases are executed (Pass/Fail recorded)
+- Postman collection requests executed successfully for critical endpoints
+- Automated tests (if available) executed with a saved report/log
+- No open **Critical** defects
+- All **High** defects are documented and communicated (accepted risk or planned fix)
+- Test results and discovered issues are documented in `/qa/docs`

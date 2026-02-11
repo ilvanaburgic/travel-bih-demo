@@ -1,4 +1,4 @@
-# Test Cases - Travel BiH Demo Application
+`# Test Cases - Travel BiH Demo Application
 
 ## Authentication Login
 
@@ -245,3 +245,4 @@ Token is missing or invalid
 
 **Expected Result:**  
 User is redirected to login page and protected content is not shown
+`
