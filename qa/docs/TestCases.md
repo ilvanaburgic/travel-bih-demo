@@ -168,3 +168,80 @@ User is logged in
 **Expected Result:**  
 User is redirected to login page and cannot access protected pages after logout
 
+## Attractions – List (Dashboard)
+
+### TC-ATTR-01 View attractions list after login
+
+**Precondition:**  
+User is logged in
+
+**Steps:**
+1. Login with valid credentials
+2. Open dashboard page
+
+**Expected Result:**  
+Attractions list is displayed with cards (category, name, city)
+
+### TC-ATTR-02 Open attraction details from list
+
+**Precondition:**  
+User is logged in and attractions list is displayed
+
+**Steps:**
+1. On dashboard, click on any attraction card
+
+**Expected Result:**  
+User is navigated to attraction details page and selected attraction information is displayed
+
+### TC-ATTR-03 Attractions list not accessible without login
+
+**Precondition:**  
+User is logged out (no token)
+
+**Steps:**
+1. Try to open /dashboard directly
+
+**Expected Result:**  
+User is redirected to login page
+
+### TC-ATTR-04 Attraction details show correct content
+
+**Precondition:**  
+User is logged in
+
+**Steps:**
+1. Open dashboard
+2. Click on a specific attraction card
+3. Verify the details page content
+
+**Expected Result:**  
+Details page displays correct:
+- category
+- attraction name
+- city
+- description
+
+## Attractions – Error Handling
+
+### TC-ATTR-05 Non-existent attraction ID returns error page/message
+
+**Precondition:**  
+User is logged in
+
+**Steps:**
+1. Manually open /attraction/9999 in the browser address bar
+
+**Expected Result:**  
+Error message is displayed (e.g., "Attraction not found") and user can navigate back to dashboard
+
+### TC-ATTR-06 Expired/invalid token blocks attractions endpoint (UI behavior)
+
+**Precondition:**  
+Token is missing or invalid
+
+**Steps:**
+1. Delete token from browser storage (localStorage) OR use incognito window
+2. Open /dashboard
+
+**Expected Result:**  
+User is redirected to login page and protected content is not shown
