@@ -117,3 +117,54 @@ Email does not exist in the system
 **Expected Result:**  
 Validation error message is displayed indicating password length requirement
 
+## Authentication – Protected Routes (JWT)
+
+### TC-AUTH-01 Access dashboard without token
+
+**Precondition:**  
+User is logged out (no token in browser)
+
+**Steps:**
+1. Open browser in a new/incognito window
+2. Try to open /dashboard directly (paste URL in address bar)
+
+**Expected Result:**  
+User is redirected to login page and dashboard is not accessible
+
+### TC-AUTH-02 Access attraction details without token
+
+**Precondition:**  
+User is logged out (no token in browser)
+
+**Steps:**
+1. Open browser in a new/incognito window
+2. Try to open /attraction/37 directly (paste URL in address bar)
+
+**Expected Result:**  
+User is redirected to login page and attraction details are not accessible
+
+### TC-AUTH-03 Access protected pages with valid token
+
+**Precondition:**  
+User is logged in (valid token exists)
+
+**Steps:**
+1. Login with valid credentials
+2. Open /dashboard
+3. Open an attraction details page (click any card)
+
+**Expected Result:**  
+Protected pages are accessible and data is displayed successfully
+
+### TC-AUTH-04 Logout clears session and blocks protected pages
+
+**Precondition:**  
+User is logged in
+
+**Steps:**
+1. Click Logout button
+2. Try to open /dashboard directly
+
+**Expected Result:**  
+User is redirected to login page and cannot access protected pages after logout
+
